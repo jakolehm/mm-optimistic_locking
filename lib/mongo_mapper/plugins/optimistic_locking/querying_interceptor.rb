@@ -13,10 +13,9 @@ module MongoMapper
             current_lock_version = self._lock_version
             begin
               self._lock_version += 1
-              result = collection.update({:_id => self._id, :_lock_version => current_lock_version},
-                                          to_mongo,
-                                          :upsert => false, :safe => true)
-
+              result = collection.update({:_id => self._id, :$or => [ {:_lock_version => current_lock_version},  { :_lock_version => { :$exists => false } } ] },
+                                          to_mongo, :upsert => false, :safe => true)
+                                          
               raise MongoMapper::StaleDocumentError.new(self) unless result["updatedExisting"]
             rescue
               self._lock_version -= 1

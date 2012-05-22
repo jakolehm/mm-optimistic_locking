@@ -1,9 +1,9 @@
 mm-optimistic_locking
 =====================
 
-[![Build Status](https://secure.travis-ci.org/highgroove/mm-optimistic_locking.png)](http://travis-ci.org/highgroove/mm-optimistic_locking)
-
 mm-optimistic_locking implements optimistic locking in mongo_mapper.
+
+Forked from https://github.com/highgroove/mm-optimistic_locking
 
 Optimistic Locking?
 -------------------

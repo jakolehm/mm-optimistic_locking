@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "mm-optimistic_locking"
-  s.version     = "0.0.4"
+  s.version     = "0.0.5"
   s.authors     = ["Andy Lindeman"]
   s.email       = ["andy@highgroove.com"]
   s.homepage    = "http://github.com/highgroove/mm-optimistic_locking"
@@ -31,8 +31,12 @@ Gem::Specification.new do |s|
 
   s.require_paths = ["lib"]
 
-  s.add_dependency 'mongo_mapper', '>=0.9.0'
-  s.add_dependency 'activesupport', '~>3.0'
+  s.add_dependency 'mongo_mapper', '>=0.11.1'
+  s.add_dependency 'activesupport', '~>3.2'
+  
+  s.add_dependency 'mongo', '1.6.2'
+  s.add_dependency 'bson', '1.6.2'
+  s.add_dependency 'bson_ext', '1.6.2'
 
   s.add_development_dependency 'rake', '~>0.8.7'
   s.add_development_dependency 'rspec', '~>2.6.0'
